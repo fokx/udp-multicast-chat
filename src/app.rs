@@ -58,12 +58,12 @@ impl eframe::App for App {
         });
     }
 
-    fn on_exit(&mut self) {
-        let Network { handle, submit, .. } = self.network.take().unwrap();
-
-        // Dropping the sender half synchronizes with the network
-        // thread that it is now time to join with the main thread.
-        drop(submit);
-        handle.join().expect("failed to join network thread");
-    }
+    // fn on_exit(&mut self) {
+    //     let Network { handle, submit, .. } = self.network.take().unwrap();
+    // 
+    //     // Dropping the sender half synchronizes with the network
+    //     // thread that it is now time to join with the main thread.
+    //     drop(submit);
+    //     handle.join().expect("failed to join network thread");
+    // }
 }

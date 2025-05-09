@@ -16,7 +16,7 @@ struct Args {
     /// specific port to bind the socket to
     #[argh(option, short = 'p', default = "MULTICAST_PORT")]
     port: u16,
-    /// whether or not to allow the UDP socket
+    /// whether to allow the UDP socket
     /// to be reused by another application
     #[argh(switch)]
     reuse: bool,
